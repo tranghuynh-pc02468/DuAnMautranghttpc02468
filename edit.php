@@ -1,33 +1,7 @@
-<?php 
-    require "dao/pdo.php";
-    require "dao/loai.php";
-
-    //Thêm mới 
-    if(isset($_POST['ten_loai'])){
-        $ten_loai = $_POST['ten_loai'];
-        loai_insert($ten_loai);
-    }
-
-    // xóa
-    if(isset($_GET['ma_loai'])){
-        loai_delete($_GET['ma_loai']);
-    }
-    
-    // pdo_get_connection();
-    // hiển thị ds loại ra màn hình
-    $dsloai = loai_selectAll();
-    foreach ($dsloai as $loai) {
-        extract($loai);
-        $del_link = "index.php?ma_loai=".$ma_loai;
-        $edit_link = "edit.php?ma_loai=".$ma_loai;
-        echo '<li><a>'.$ten_loai.'</a> - <a href="'.$del_link.'">xóa</a> - <a href="'.$edit_link.'">sửa</a> </li>';
-    }
-
+<?php
+ require "dao/pdo.php";
+ require "dao/loai.php";
 ?>
-
-
-<br>
-
 <!doctype html>
 <html lang="en">
 
@@ -48,13 +22,29 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <form action="index.php" method="POST">
+            <?php
+            if(isset($_POST['ma_loai'])){
+                loai_update($_POST['ma_loai'], $_POST['ten_loai']);
+                header('location: index.php');
+            }
+                if(isset($_GET['ma_loai'])){
+                    $ma_loai = $_GET['ma_loai'];
+                    $loai_info = loai_selectOne($ma_loai);
+                    extract($loai_info);
+            ?>
+
+                <form action="edit.php" method="POST">
                     <div class="mb-3">
                         <label for="">Tên loại:</label>
-                        <input type="text" class="form-control" name="ten_loai">
+                        <input type="text" class="form-control" name="ten_loai" value="<?=$ten_loai?>">
                     </div>
-                    <input type="submit" class="btn btn-primary" value="Thêm mới">
+                    <input type="text" name="ma_loai" value="<?=$ma_loai?>" readonly>
+                    <input type="submit" class="btn btn-primary" value="Cập nhật">
                 </form>
+
+            <?php
+                }
+            ?>
             </div>
         </div>
     </div>

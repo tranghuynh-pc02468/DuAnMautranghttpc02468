@@ -22,6 +22,22 @@
         $sql = "DELETE FROM loai WHERE ma_loai=?";
         pdo_execute($sql, $ma_loai);
     }
+
+    /**
+     * lấy thông tin 1 mã loại
+     */
+    function loai_selectOne($ma_loai){
+        $sql = "SELECT * FROM loai WHERE ma_loai=?";
+        return pdo_query_one($sql, $ma_loai);
+    }
+
+    /**
+     * Cập nhật tên loại theo mã 
+     */
+    function loai_update($ma_loai, $ten_loai){
+        $sql = "UPDATE loai SET ten_loai=? WHERE ma_loai=?";
+        pdo_execute($sql, $ten_loai, $ma_loai);
+    }
 ?>
 
 
