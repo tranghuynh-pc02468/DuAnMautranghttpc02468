@@ -7,13 +7,19 @@
         $ten_loai = $_POST['ten_loai'];
         loai_insert($ten_loai);
     }
+
+    // xóa
+    if(isset($_GET['ma_loai'])){
+        loai_delete($_GET['ma_loai']);
+    }
     
     // pdo_get_connection();
     // hiển thị ds loại ra màn hình
     $dsloai = loai_selectAll();
     foreach ($dsloai as $loai) {
         extract($loai);
-        echo '<li><a>'.$ten_loai.'</a></li>';
+        $del_link = "index.php?ma_loai=".$ma_loai;
+        echo '<li><a>'.$ten_loai.'</a> - <a href="'.$del_link.'">xóa</a> </li>';
     }
 
 ?>
