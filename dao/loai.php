@@ -7,6 +7,13 @@
         return pdo_query($sql);
     }
 
+    /**
+     * thêm mới loại
+     */
+    function loai_insert($ten_loai){
+        $sql = "INSERT INTO loai(ten_loai) VALUES(?)";
+        pdo_execute($sql, $ten_loai);
+    }
 ?>
 
 
