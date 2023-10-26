@@ -18,16 +18,34 @@
         loai_insert($ten_loai);
         $loai_list = loai_selectAll();
         $VIEW_NAME = "list.php";
+ 
+    } elseif (exit_param("btn_edit")) {
+        //lấy dl từ form
+        $ma_loai = $_REQUEST['ma_loai'];
+   
+        $loai_info = loai_selectOne($ma_loai);
+        extract($loai_info);
+        //show dữ liệu
+        $VIEW_NAME = "edit.php";
+
+    } elseif (exit_param("btn_update")) {
+        $ma_loai = $_POST['ma_loai'];
+        $ten_loai = $_POST['ten_loai'];
+        
+        loai_update($ma_loai, $ten_loai);
+ 
+        $loai_list = loai_selectAll();
+        $VIEW_NAME = "list.php";
 
     } elseif (exit_param("btn_delete")) {
-        if (isset($_GET['ma_loai'])) {
-            loai_delete($_GET['ma_loai']);
-        }
+        $ma_loai = $_REQUEST['ma_loai'];
+        loai_delete($ma_loai);
+        //hiện lại ds
+        $loai_list = loai_selectAll();
         $VIEW_NAME = "list.php";
 
     } else {
         $loai_list = loai_selectAll();
-
         $VIEW_NAME = "list.php";
 
     }

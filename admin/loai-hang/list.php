@@ -30,7 +30,6 @@
                     $i =1;
                     foreach ($loai_list as $loai) {
                       extract($loai);
-                      $del_link = "index.php?ma_loai=".$ma_loai;
                       
                   ?>
                     <tr>
@@ -41,8 +40,8 @@
                         <?= $ten_loai ?>
                       </td>
                       <td>
-                        <a class="btn btn-primary" href="">Sửa</a>
-                        <a class="btn btn-danger" name="btn-delete" href="<?=$del_link?>">Xóa</a> 
+                        <a class="btn btn-primary" href="index.php?btn_edit&ma_loai=<?=$ma_loai?>">Sửa</a>
+                        <a class="btn btn-danger" href="index.php?btn_delete&ma_loai=<?=$ma_loai?>">Xóa</a> 
                       </td>
                     </tr>
                   <?php $i++; } ?>
