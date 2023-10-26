@@ -4,9 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Dashboard</title>
+    <title>X Shop | Dashboard</title>
 
-    <?php include "components/style.php"  ?>
+    <?php include "components/style.php" ?>
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -18,7 +19,7 @@
         <!-- Main Sidebar Container -->
         <?php include "menu.php" ?>
 
-        <?php include $VIEW_NAME;?>
+        <?php include $VIEW_NAME; ?>
 
 
         <!-- /.content-wrapper -->
@@ -38,8 +39,8 @@
     </div>
     <!-- ./wrapper -->
 
-    <?php 
-        include "components/script.php";
+    <?php
+    include "components/script.php";
     ?>
 </body>
 
