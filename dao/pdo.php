@@ -10,7 +10,7 @@ function pdo_get_connection()
     $password = '';
 
     try {
-        $conn = new PDO("mysql:host=$servername;dbname=duanmau_x_shop", $username, $password);
+        $conn = new PDO("mysql:host=$servername;dbname=DA_x_shop", $username, $password);
         // set the PDO error mode to exception
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         // echo 'Connected successfully';
@@ -66,6 +66,7 @@ function pdo_query($sql)
 function pdo_query_one($sql)
 {
     $sql_args = array_slice(func_get_args(), 1);
+   
     try {
         $conn = pdo_get_connection();
         $stmt = $conn->prepare($sql);
