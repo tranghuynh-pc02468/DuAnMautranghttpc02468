@@ -48,9 +48,9 @@ function khach_hang_insert( $mat_khau, $username, $email, $hinh,  $vai_tro){
     }
 
 
-    function khach_hang_exits($ma_kh){
-        $sql = "SELECT count(*) FROM khach_hang WHERE $ma_kh=?";
-        return pdo_query_value($sql, $ma_kh) > 0;
+    function khach_hang_exits($username){
+        $sql = "SELECT count(ma_kh) FROM khach_hang WHERE $username=?";
+        return pdo_query_value($sql, $username) > 0 ;
     }
 
 
@@ -65,8 +65,8 @@ function khach_hang_insert( $mat_khau, $username, $email, $hinh,  $vai_tro){
         return pdo_query($sql, $vai_tro);
     }
 
-    function khach_hang_check($email, $mat_khau){
-        $sql = "SELECT * FROM khach_hang WHERE email=? AND mat_khau=?";
-        return pdo_query_one($sql, $email, $mat_khau);
+    function khach_hang_checklogin($username){
+        $sql = "SELECT * FROM khach_hang WHERE username=?";
+        return pdo_query_one($sql, $username);
     }
 ?>
