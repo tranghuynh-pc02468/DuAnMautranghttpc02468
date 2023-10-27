@@ -1,4 +1,6 @@
 <?php
+require_once "pdo.php";
+
     /**
      * Truy vấn DS loại đã nhập mới nhất
      */

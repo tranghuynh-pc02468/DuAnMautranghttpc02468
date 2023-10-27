@@ -55,7 +55,7 @@ function hang_hoa_update($ma_hh, $ten_hh, $don_gia,  $hinh, $ma_loai,  $so_luot_
 
 function hang_hoa_top10()
 {
-    $sql = "SELECT * FROM hang_hoa WHERE so_luot_xem > 0 ORDER BY so_luot_xem DESC LIMIT 0, 10";
+    $sql = "SELECT * FROM hang_hoa WHERE so_luot_xem > 0 ORDER BY so_luot_xem DESC LIMIT 0, 5";
     return pdo_query($sql);
 }
 
