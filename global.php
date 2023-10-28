@@ -57,6 +57,7 @@ function add_cookie($name, $value, $day){
 
 
 
+
 /**
  * Xóa cookie
  * @param string $name là tên cookie

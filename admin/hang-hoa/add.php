@@ -60,7 +60,7 @@
                                     </div> -->
                                     <div class="form-gruop col-lg-4">
                                         <label for="">Ngày nhập</label>
-                                        <input name="ngay_nhap" type="date" class="form-control">
+                                        <input name="ngay_nhap" type="date" class="form-control" value="<?php echo date('Y-m-d'); ?>">
                                     </div>
                                     <div class="form-gruop col-lg-4">
                                         <label for="">Số lượt xem</label>

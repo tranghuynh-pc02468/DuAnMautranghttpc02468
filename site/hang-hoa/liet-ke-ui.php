@@ -6,7 +6,7 @@
         ?>
 
         <div class="col-12 col-md-6 col-lg-4 mt-3">
-            <div class="card">
+            <div class="card h-100">
                 <a href="chi-tiet.php?ma_hh=<?=$ma_hh?>" class="text-decoration-none">
                     <img src="<?= $UPLOAD_URL . $hinh ?>" class="card-img-top" alt="...">
                     <div class="card-body">

@@ -35,7 +35,7 @@
                         ?>
                         <li class="list-group-item">
                             <span class="fw-bold">
-                                <?= $ma_kh ?>
+                                <?= $username ?>
                             </span> -
                             <?= $ngay_bl ?> <br>
                             <span class="fst-italic">
@@ -62,7 +62,7 @@
 
                     ?>
 
-                    <form action="<?=$_SERVER['REQUEST_URL']?>" method="post">
+                    <form  method="post">
                         <div class="mb-3">
                             <label for="" class="form-label">Đánh giá về sản phẩm</label>
                             <textarea name="noi_dung" class="form-control"  id="" cols="30" rows="5" ></textarea>
