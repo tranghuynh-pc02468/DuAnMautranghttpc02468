@@ -36,7 +36,7 @@
                                         <td><?=$i?></td>
                                         <td><?= $username ?></td>
                                         <td><?= $email ?></td>
-                                        <td><?= $hinh ?></td>
+                                        <td><img style="width:80px" src="<?= $UPLOAD_URL.$hinh ?>">  </td>
                                         <td><?= ((int)$vai_tro == 1) ? "Nhân viên":"Khách hàng";?></td>
                                         <td>
                                             <a class="btn btn-primary" href="index.php?btn_edit&ma_kh=<?=$ma_kh?>">Sửa</a>
