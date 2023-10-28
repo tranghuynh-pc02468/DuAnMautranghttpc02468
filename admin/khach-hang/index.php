@@ -15,7 +15,7 @@ if (exit_param("btn_list")) {
 } elseif (exit_param("btn_insert")) {
     // $ma_kh = $_POST['ma_kh'];
     $username = $_POST['username'];
-    $mat_khau = $_POST['mat_khau'];
+    $mat_khau = md5($_POST['mat_khau']);
     $email = $_POST['email'];
     $file_name = save_file("hinh", "$UPLOAD_URL");
     $hinh = $file_name ? $file_name : "user.jpg";
